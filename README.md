@@ -1,7 +1,7 @@
 **E-Commerce App**
 
 **Live Demo:** [Demo](https://e-commerce-app-pied-one.vercel.app) <br/> <br/> 
-**Screnshot:**![image](https://github.com/asim-iskandarli/mini-socialapp/blob/main/screenshot.gif)
+**Screnshot:**![image](https://github.com/asim-iskandarli/E-CommerceApp-NextJS/blob/main/screenshot.gif)
 
 **Used in this project:** <br/> 
 Next JS, Next-Auth, Styled Components, Context API <br/> <br/> <br/>
