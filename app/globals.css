@@ -1,3 +1,8 @@
+a {
+  color: #4d4d4d;
+}
+/* 
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -104,4 +109,4 @@ a {
   html {
     color-scheme: dark;
   }
-}
+} */
