@@ -11,12 +11,12 @@ Register and login <br/>
 Profile editing <br/>
 Adding and deleting products to cart or favorites <br/>
 Admin panel <br/>
-Creating, deleting and modifying products <br/>
+Creating, deleting and modifying products <br/><br/><br/> 
 
 
 
-**Install dependencies backend and frontend** <br/> 
-### `cd ./folder-name npm install` <br/> 
+**Install dependencies** <br/> 
+### `cd ./folder-name npm install` <br/> <br/> 
 
 **Start project** <br/> 
 ### `cd ./folder-name npm run dev` or `npm run start`
