@@ -2,7 +2,7 @@
 import CartButton from '@/app/components/buttons/CartButton';
 import Price from '@/app/components/product/Price';
 import { useProduct } from '@/app/contexts/productContext';
-import { ProductProps, UserType } from '@/app/types';
+import { ProductProps } from '@/app/types';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
