@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
 import Price from '../components/product/Price'
@@ -66,7 +66,15 @@ const Search = () => {
     )
 }
 
-export default Search;
+const SearchBar = () => {
+    return (
+        <Suspense>
+            <Search />
+        </Suspense>
+    )
+}
+
+export default SearchBar;
 
 const StyledSearch = styled.div`
     background-color: #fff;
