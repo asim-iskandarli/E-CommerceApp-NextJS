@@ -8,10 +8,12 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 type DetailProps = {
-  productId: string;
+  params: {
+    productId: string;
+  }
 }
 
-const ProductDetail = ({ params }: { params: DetailProps, product: ProductProps }) => {
+const ProductDetail: React.FC<DetailProps> = ({ params }) => {
   const { productId } = params;
 
   const { allProducts } = useProduct()

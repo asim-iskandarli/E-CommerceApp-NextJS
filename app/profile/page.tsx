@@ -37,7 +37,6 @@ const Profile = () => {
 
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target as HTMLInputElement
-
     setUserData((prev) => ({ ...prev, [name]: value }))
   }
 
@@ -70,12 +69,6 @@ const Profile = () => {
           <label htmlFor='emaiı'>Email</label>
           <StyledInput placeholder='Email' name="email" defaultValue={user?.email} onChange={handleChangeInput} />
         </InputField>
-        {/* <InputField>
-          <StyledInput placeholder='Yeni şifrə' name="password" onChange={handleChangeInput}/>
-        </InputField>
-        <InputField>
-          <StyledInput placeholder='Əvvəlki şifrə' name="oldPassword" onChange={handleChangeInput}/>
-        </InputField> */}
         <StyledButton>{load ? <MoonLoader color="#55c2da" size={16}/> : 'Yadda saxla'}</StyledButton>
       </Form>
     </Container>
