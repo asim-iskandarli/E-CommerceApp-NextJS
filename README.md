@@ -1,6 +1,6 @@
 **E-Commerce App**
 
-**Live Demo:** [Demo](https://mini-socialapp-q70y.onrender.com) <br/> <br/> 
+**Live Demo:** [Demo](https://e-commerce-app-pied-one.vercel.app) <br/> <br/> 
 **Screnshot:**![image](https://github.com/asim-iskandarli/mini-socialapp/blob/main/screenshot.gif)
 
 **Used in this project:** <br/> 
@@ -16,7 +16,7 @@ Creating, deleting and modifying products <br/>
 
 
 **Install dependencies backend and frontend** <br/> 
-### `cd ./folder-name npm install`
+### `cd ./folder-name npm install` <br/> 
 
 **Start project** <br/> 
 ### `cd ./folder-name npm run dev` or `npm run start`
