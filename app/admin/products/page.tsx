@@ -93,7 +93,7 @@ export const ProductName = styled.h4`
 `;
 
 
-export const ProductImage = styled.div`
+const ProductImage = styled.div`
   position: relative;
   width: 220px;
   height: 220px;

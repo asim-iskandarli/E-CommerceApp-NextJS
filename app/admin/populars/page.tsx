@@ -7,7 +7,7 @@ import { StyledIcon } from '@/app/globalStyles';
 import { IoPersonOutline } from "react-icons/io5";
 import PopularProductDropdown from '@/app/components/admin/PopularProductDropdown';
 import { useRouter } from 'next/navigation';
-import { Creator, Footer, Header, NoProduct, ProductImage, ProductName, StyledProduct } from '../products/page';
+import { Creator, Footer, Header, NoProduct, ProductName, StyledProduct } from '../products/page';
 
 const PopularProducts = () => {
   const { popularProducts } = useProduct();
@@ -59,4 +59,16 @@ const StyledProducts = styled.div`
    display: flex;
    flex-wrap: wrap;
    gap: 10px;
+`;
+
+const ProductImage = styled.div`
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 0 auto;
+  cursor: pointer;
+
+  img {
+    border-radius: 7px;
+  }
 `;
