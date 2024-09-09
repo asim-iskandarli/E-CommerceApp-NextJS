@@ -64,6 +64,7 @@ const Container = styled.div`
   padding: 5px;
 
   @media only screen and (max-width: 768px) {
+    width: var(--container-width);
     flex-direction: column;
   }
 `;
