@@ -63,7 +63,7 @@ const AllProducts = styled.div`
 `;
 
 
-export const StyledProduct = styled.div`
+const StyledProduct = styled.div`
   width: 300px;
   border: 1px solid #ddd;
   padding: 1rem;
@@ -78,14 +78,14 @@ export const StyledProduct = styled.div`
   }
 `;
 
-export const Header = styled.div`
+const Header = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
 `;
 
 
-export const ProductName = styled.h4`
+const ProductName = styled.h4`
   margin-bottom: 5px;
   text-align: center;
   color: var(--label-color);
@@ -105,14 +105,14 @@ const ProductImage = styled.div`
   }
 `;
 
-export const Footer = styled.div`
+const Footer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 
 
-export const NoProduct = styled.div`
+const NoProduct = styled.div`
   width: 100%;
   text-align: center;
   margin-top: 2rem;
@@ -121,7 +121,7 @@ export const NoProduct = styled.div`
   font-weight: 600;
 `;
 
-export const Creator = styled.div`
+const Creator = styled.div`
   margin-top: 1rem;
   display: flex;
   align-items: center;
