@@ -120,9 +120,9 @@ export const StyledIcon = styled.div`
     }
 
     @media only screen and (max-width: 768px) {
-        width: 15px;
-        height: 15px;
-        font-size: 18px !important;
+        width: 18px;
+        height: 18px;
+        font-size: 15px !important;
 
         &:hover {
             background-color: transparent;

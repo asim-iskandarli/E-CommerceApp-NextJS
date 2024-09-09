@@ -38,9 +38,8 @@ const StyledSearch = styled.div`
   @media only screen and (max-width: 768px) {
     width: max-content;
     border: none;
-  }
-  @media only screen and (max-width: 512px) {
-    --width-screen: 95%;
+    width: 40px;
+    height: 40px;
   }
 `;
 
@@ -59,4 +58,8 @@ const SearchIcon = styled.div`
   cursor: pointer;
   padding: 8px;
   color: #636363;
+
+  @media only screen and (max-width: 768px) {
+      font-size: 30px !important;
+  }
 `;
