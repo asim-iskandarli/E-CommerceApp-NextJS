@@ -60,14 +60,14 @@ const CreateProduct = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (loading) return;
+
+        if (!productImage || !productData.name) return;
         setLoading(true);
+        
         try {
             const storage = getStorage(firebaseApp);
             const storageRef = ref(storage, `/images/${productData.name}`);
             const uploadTask = uploadBytesResumable(storageRef, productImage);
-
-            if (!productImage || !productData.name) return;
-
 
             uploadTask.on('state_changed',
                 (snapshot) => {
@@ -82,8 +82,8 @@ const CreateProduct = () => {
                             break;
                     }
                 },
-                (error) => {
-                    console.log(error)
+                () => {
+                    toast.error('Bir xəta baş verdi');
                 },
                 () => {
                     getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
@@ -103,7 +103,7 @@ const CreateProduct = () => {
                     });
                 }
             );
-        } catch (error) {
+        } catch {
             toast.error('Bir xəta baş verdi');
             setLoading(false);
         }
@@ -111,7 +111,7 @@ const CreateProduct = () => {
 
     return (
         <Container>
-            <CreateBtn onClick={() => setIsActive(true)}>Yeni məhsul yarat</CreateBtn>
+            <CreateBtn onClick={() => setIsActive(true)}>Yeni</CreateBtn>
             {
                 isActive &&
                 <CreateBox>
@@ -167,12 +167,12 @@ const Container = styled.div`
 const CreateBtn = styled(StyledButton)`
     width: 120px;
     height: 40px;
-    background-color: var(--primary);
-    color: #fff;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    font-size: 16px;
 
     &:hover {
-        background-color: var(--primary-hover);
-        color: #fff;
+        border: 1px solid var(--primary-hover);
     }
 `;
 

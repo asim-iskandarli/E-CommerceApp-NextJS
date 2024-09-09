@@ -12,7 +12,12 @@ import { useProduct } from '@/app/contexts/productContext';
 import { MoonLoader } from 'react-spinners'
 import { ProductProps } from '@/app/types';
 
-const EditProduct = ({ toggleEdit, product }: any) => {
+interface EditProductProps {
+    toggleEdit: () => void;
+    product: ProductProps;
+}
+
+const EditProduct: React.FC<EditProductProps> = ({ toggleEdit, product }) => {
     const [productData, setProductData] = useState<ProductProps>(product);
     const [loading, setLoading] = useState<boolean>(false);
 
@@ -32,15 +37,12 @@ const EditProduct = ({ toggleEdit, product }: any) => {
         setProductData((prev) => ({ ...prev, inStock: e.target.checked }))
     }
 
-
-
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (loading) return;
+        if (!productData.name) return;
         setLoading(true);
         try {
-            if (!productData.name) return;
-
             axios.post('/api/product/update', productData)
                 .then(({ data }) => {
                     updateProduct(productData);
@@ -77,7 +79,7 @@ const EditProduct = ({ toggleEdit, product }: any) => {
                             </InputField>
                         </PriceField>
                         <InputField>
-                            <input type="checkbox" id="inStock" name="inStock" onChange={handleChangeCheckboxInput} defaultChecked={productData.inStock} checked={productData.inStock} />
+                            <input type="checkbox" id="inStock" name="inStock" onChange={handleChangeCheckboxInput} checked={productData.inStock} />
                             <label htmlFor='inStock'>Məhsul stokda var?</label>
                         </InputField>
                         <InputField>
@@ -104,8 +106,6 @@ const Container = styled.div`
     width: 100%;
     margin-bottom: 1rem;
 `;
-
-
 
 const EditBox = styled.div`
     position: fixed;

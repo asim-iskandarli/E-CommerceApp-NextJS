@@ -7,9 +7,11 @@ import styled from 'styled-components';
 import { StyledIcon } from '@/app/globalStyles';
 import ProductDropdown from '@/app/components/admin/ProductDropdown';
 import { IoPersonOutline } from "react-icons/io5";
+import { useRouter } from 'next/navigation';
 
 const Products = () => {
   const { allProducts } = useProduct();
+  const router = useRouter();
 
   return (
     <Container>
@@ -24,11 +26,11 @@ const Products = () => {
                     <ProductDropdown product={product} />
                   </StyledIcon>
                 </Header>
-                <ProductName>
+                <ProductName onClick={() => router.push(`/product/${product?.id}`)}>
                   {product.name}
                 </ProductName>
-                <ProductImage>
-                  <Image src={product.image} fill alt="Product" />
+                <ProductImage onClick={() => router.push(`/product/${product?.id}`)}>
+                  <Image src={product.image} fill alt="Product" sizes='100%' />
                 </ProductImage>
                 <Footer>
                   <Price oldPrice={product.oldPrice} newPrice={product.newPrice} />
@@ -61,7 +63,7 @@ const AllProducts = styled.div`
 `;
 
 
-const StyledProduct = styled.div`
+export const StyledProduct = styled.div`
   width: 300px;
   border: 1px solid #ddd;
   padding: 1rem;
@@ -76,44 +78,50 @@ const StyledProduct = styled.div`
   }
 `;
 
-const Header = styled.div`
+export const Header = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
 `;
 
 
-const ProductName = styled.h4`
+export const ProductName = styled.h4`
   margin-bottom: 5px;
   text-align: center;
-  color: var(--label-color)
+  color: var(--label-color);
+  cursor: pointer;
 `;
 
 
-const ProductImage = styled.div`
+export const ProductImage = styled.div`
   position: relative;
   width: 220px;
   height: 220px;
   margin: 0 auto;
+  cursor: pointer;
+
   img {
     border-radius: 7px;
   }
 `;
 
-const Footer = styled.div`
+export const Footer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 
 
-const NoProduct = styled.div`
+export const NoProduct = styled.div`
+  width: 100%;
+  text-align: center;
   margin-top: 2rem;
-  font-size: 28px;
-  color: var(--label-color)
+  font-size: 22px;
+  color: #bbbbbbb9;
+  font-weight: 600;
 `;
 
-const Creator = styled.div`
+export const Creator = styled.div`
   margin-top: 1rem;
   display: flex;
   align-items: center;

@@ -14,10 +14,14 @@ const Price = ({ oldPrice, newPrice }: PriceProps) => {
     )
 }
 
-export default Price
+export default Price;
 
 const StyledPrice = styled.div`
     margin-top: 6px;
+
+    @media only screen and (max-width: 768px) {
+        font-size: 14px;
+    }
 `;
 
 const OldPrice = styled.h4`

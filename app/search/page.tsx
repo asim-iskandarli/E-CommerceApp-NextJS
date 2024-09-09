@@ -8,6 +8,8 @@ import CartButton from '../components/buttons/CartButton'
 import { useSearchParams } from "next/navigation";
 import { useProduct } from '../contexts/productContext'
 import { ProductProps } from '../types'
+import { ProductImage, ProductName } from '../cart/page'
+import { Button } from '../favorites/page'
 
 const Search = () => {
     const searchParams = useSearchParams();
@@ -138,12 +140,3 @@ const BodyBottom = styled.div`
     gap: 2rem;
 `;
 
-const Button = styled.div`
-    width: 200px;
-`;
-const ProductImage = styled.div`
-    width: 150px;
-    height: 150px;
-    position: relative;
-`;
-const ProductName = styled.h3``;

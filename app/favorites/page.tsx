@@ -7,14 +7,15 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { StyledIcon } from '../globalStyles'
 import { useFavorite } from '../contexts/favoriteContext'
 import CartButton from '../components/buttons/CartButton'
+import { ProductImage, ProductName } from '../cart/page'
 
 const Favorites = () => {
     const { favoriteProducts, removeFromFavorite } = useFavorite();
 
     return (
-        <StyledFavorite>
+        <Container>
             <Title>Bəyəndiklərim</Title>
-            <Bottom>
+            <StyledFavorites>
                 <Left>
                     {
                         favoriteProducts?.map((product) => (
@@ -36,14 +37,14 @@ const Favorites = () => {
                         ))
                     }
                 </Left>
-            </Bottom>
-        </StyledFavorite>
+            </StyledFavorites>
+        </Container>
     )
 }
 
 export default Favorites;
 
-const StyledFavorite = styled.div`
+const Container = styled.div`
     background-color: #fff;
     padding: 5px;
     display: flex;
@@ -55,7 +56,7 @@ const Title = styled.h3`
     padding: 1rem;
 `;
 
-const Bottom = styled.div`
+const StyledFavorites = styled.div`
     display: flex;
     gap: 1rem;
 `;
@@ -73,6 +74,10 @@ const Product = styled.div`
     display: flex;
     align-items: center;
     gap: 2rem;
+
+    @media only screen and (max-width: 768px) {
+        gap: 1rem;
+    }
 `;
 const ProductBody = styled.div`
     width: 100%;
@@ -85,6 +90,11 @@ const BodyTop = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media only screen and (max-width: 768px) {
+        width: 100%;
+        margin-bottom: 3px;
+    }
 `;
 const BodyBottom = styled.div`
     display: flex;
@@ -92,12 +102,11 @@ const BodyBottom = styled.div`
     gap: 2rem;
 `;
 
-const Button = styled.div`
+export const Button = styled.div`
     width: 200px;
+
+    @media only screen and (max-width: 768px) {
+        width: 150px;
+    }
 `;
-const ProductImage = styled.div`
-    width: 150px;
-    height: 150px;
-    position: relative;
-`;
-const ProductName = styled.h3``;
+

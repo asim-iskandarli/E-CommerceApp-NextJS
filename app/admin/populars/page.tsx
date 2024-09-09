@@ -6,9 +6,12 @@ import styled from 'styled-components';
 import { StyledIcon } from '@/app/globalStyles';
 import { IoPersonOutline } from "react-icons/io5";
 import PopularProductDropdown from '@/app/components/admin/PopularProductDropdown';
+import { useRouter } from 'next/navigation';
+import { Creator, Footer, Header, NoProduct, ProductImage, ProductName, StyledProduct } from '../products/page';
 
 const PopularProducts = () => {
   const { popularProducts } = useProduct();
+  const router = useRouter();
 
   return (
     <Container>
@@ -22,11 +25,11 @@ const PopularProducts = () => {
                     <PopularProductDropdown popularProductId={data.id} />
                   </StyledIcon>
                 </Header>
-                <ProductName>
+                <ProductName onClick={() => router.push(`/product/${data.product?.id}`)}>
                   {data.product.name}
                 </ProductName>
-                <ProductImage>
-                  <Image src={data.product.image} fill alt="Product" />
+                <ProductImage onClick={() => router.push(`/product/${data.product?.id}`)}>
+                  <Image src={data.product.image} fill alt="Product" sizes="100%" />
                 </ProductImage>
                 <Footer>
                   <Price oldPrice={data.product.oldPrice} newPrice={data.product.newPrice} />
@@ -56,64 +59,4 @@ const StyledProducts = styled.div`
    display: flex;
    flex-wrap: wrap;
    gap: 10px;
-`;
-
-
-const StyledProduct = styled.div`
-  width: 300px;
-  border: 1px solid #ddd;
-  padding: 1rem;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-
-
-  @media only screen and (max-width: 768px) {
-    width: 250px !important;
-  }
-`;
-
-const Header = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-`;
-
-
-const ProductName = styled.h4`
-  margin-bottom: 5px;
-  text-align: center;
-  color: var(--label-color)
-`;
-
-
-const ProductImage = styled.div`
-  position: relative;
-  width: 220px;
-  height: 220px;
-  margin: 0 auto;
-  img {
-    border-radius: 7px;
-  }
-`;
-
-const Footer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-
-const NoProduct = styled.div`
-  margin-top: 2rem;
-  font-size: 28px;
-  color: var(--label-color)
-`;
-
-const Creator = styled.div`
-  margin-top: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 5px;
 `;

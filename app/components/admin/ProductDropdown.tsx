@@ -8,9 +8,10 @@ import toast from 'react-hot-toast';
 import EditProduct from './EditProduct';
 import { deleteObject, getStorage, ref } from 'firebase/storage';
 import firebaseApp from '@/lib/firebase';
+import { ProductProps } from '@/app/types';
 
 
-const ProductDropdown = ({ product }: any) => {
+const ProductDropdown: React.FC<ProductProps> = ({ product }) => {
   const [menuVisible, setMenuVisible] = useState<boolean>(false)
   const [editVisible, setEditVisible] = useState<boolean>(false)
 
@@ -64,7 +65,7 @@ const ProductDropdown = ({ product }: any) => {
           <ul>
             <li onClick={toggleEdit}>Redaktə et</li>
             {
-              popularProducts.find((data) => (data.product.id !== product.id)) &&
+              popularProducts?.find(data => data.product.id !== product.id) &&
               <li onClick={() => addPopularProduct(product.id)}>Populyarlara əlavə et</li>
             }
             <li onClick={handleDeleteProduct}>Sil</li>

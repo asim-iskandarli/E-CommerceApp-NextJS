@@ -16,9 +16,9 @@ const Cart = () => {
     let totalPrice: number | undefined = cartProducts?.reduce((total, item) => total + item.quantity * item.newPrice, 0);
 
     return (
-        <StyledCart>
+        <Container>
             <Title>Səbət</Title>
-            <Bottom>
+            <StyledCart>
                 <Left>
                     {
                         cartProducts?.map((product) => (
@@ -47,14 +47,14 @@ const Cart = () => {
                     </RightBody>
                     <RightFooter><StyledButton>Sifarişi Rəsimləşdir</StyledButton></RightFooter>
                 </Right>
-            </Bottom>
-        </StyledCart>
+            </StyledCart>
+        </Container>
     )
 }
 
 export default Cart;
 
-const StyledCart = styled.div`
+const Container = styled.div`
     background-color: #fff;
     padding: 5px;
     display: flex;
@@ -66,9 +66,13 @@ const Title = styled.h3`
     padding: 1rem;
 `;
 
-const Bottom = styled.div`
+const StyledCart = styled.div`
     display: flex;
     gap: 1rem;
+
+    @media only screen and (max-width: 768px) {
+        flex-direction: column;
+    }
 `;
 
 const Left = styled.div`
@@ -101,17 +105,17 @@ const BodyBottom = styled.div`
     align-items: center;
     gap: 2rem;
 `;
-const ProductImage = styled.div`
+export const ProductImage = styled.div`
     width: 120px;
     height: 120px;
     position: relative;
 
     @media only screen and (max-width: 768px) {
-    width: 100px;
-    height: 100px;
-  }
+        width: 100px;
+        height: 100px;
+    }
 `;
-const ProductName = styled.h3`
+export const ProductName = styled.h3`
     @media only screen and (max-width: 768px) {
         font-size: 14px;
     }

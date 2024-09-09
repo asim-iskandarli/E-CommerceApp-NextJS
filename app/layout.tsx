@@ -1,6 +1,5 @@
 "use client"
 import { Roboto } from 'next/font/google';
-import "./globals.css";
 import GlobalStyle from "./globalStyles";
 import Navbar from "./components/navbar";
 import { AuthProvider } from './contexts/authContext';

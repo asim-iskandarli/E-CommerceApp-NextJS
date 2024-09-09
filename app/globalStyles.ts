@@ -50,7 +50,7 @@ const GlobalStyle = createGlobalStyle`
         max-width: 100vw;
         font-family: Open-Sans, Helvetica, Sans-Serif;
         background-color: var(--body-bg);
-        overflow-y: scroll;
+        overflow-y: auto;
     }
     main {
         width: var(--container-width);
@@ -86,6 +86,7 @@ export const StyledButton = styled.button`
     justify-content: center;
     gap: 5px;
     cursor: pointer;
+
     &:hover {
         color: var(--primary-hover);
         background-color: var(--primary-hover-bg);
@@ -120,7 +121,12 @@ export const StyledIcon = styled.div`
 
     @media only screen and (max-width: 768px) {
         width: 15px;
+        height: 15px;
         font-size: 18px !important;
+
+        &:hover {
+            background-color: transparent;
+        }
     }
 `;
 
