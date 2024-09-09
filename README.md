@@ -2,9 +2,9 @@
 
 **Live Demo:** [Demo](https://e-commerce-app-pied-one.vercel.app) <br/> <br/> 
 **Screnshot:**![image](https://github.com/asim-iskandarli/E-CommerceApp-NextJS/blob/main/screenshot.gif)
-
+<br/><br/> 
 **Used in this project:** <br/> 
-Next JS, Typescript, Next-Auth, Styled-Components, Context API <br/> <br/> <br/>
+Next JS, Typescript, Next-Auth, Styled-Components, Context API <br/> <br/>
 
 **Features:** <br/> 
 Register and login <br/>
