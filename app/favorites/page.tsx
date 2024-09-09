@@ -7,7 +7,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { StyledIcon } from '../globalStyles'
 import { useFavorite } from '../contexts/favoriteContext'
 import CartButton from '../components/buttons/CartButton'
-import { ProductImage, ProductName } from '../cart/page'
+
 
 const Favorites = () => {
     const { favoriteProducts, removeFromFavorite } = useFavorite();
@@ -102,11 +102,27 @@ const BodyBottom = styled.div`
     gap: 2rem;
 `;
 
-export const Button = styled.div`
+const Button = styled.div`
     width: 200px;
 
     @media only screen and (max-width: 768px) {
         width: 150px;
+    }
+`;
+
+const ProductImage = styled.div`
+    width: 120px;
+    height: 120px;
+    position: relative;
+
+    @media only screen and (max-width: 768px) {
+        width: 100px;
+        height: 100px;
+    }
+`;
+const ProductName = styled.h3`
+    @media only screen and (max-width: 768px) {
+        font-size: 14px;
     }
 `;
 

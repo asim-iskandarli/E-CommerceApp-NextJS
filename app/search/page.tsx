@@ -8,8 +8,6 @@ import CartButton from '../components/buttons/CartButton'
 import { useSearchParams } from "next/navigation";
 import { useProduct } from '../contexts/productContext'
 import { ProductProps } from '../types'
-import { ProductImage, ProductName } from '../cart/page'
-import { Button } from '../favorites/page'
 
 const Search = () => {
     const searchParams = useSearchParams();
@@ -140,3 +138,26 @@ const BodyBottom = styled.div`
     gap: 2rem;
 `;
 
+const ProductImage = styled.div`
+    width: 120px;
+    height: 120px;
+    position: relative;
+
+    @media only screen and (max-width: 768px) {
+        width: 100px;
+        height: 100px;
+    }
+`;
+const ProductName = styled.h3`
+    @media only screen and (max-width: 768px) {
+        font-size: 14px;
+    }
+`;
+
+const Button = styled.div`
+    width: 200px;
+
+    @media only screen and (max-width: 768px) {
+        width: 150px;
+    }
+`;

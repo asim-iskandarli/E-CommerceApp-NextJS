@@ -105,7 +105,7 @@ const BodyBottom = styled.div`
     align-items: center;
     gap: 2rem;
 `;
-export const ProductImage = styled.div`
+const ProductImage = styled.div`
     width: 120px;
     height: 120px;
     position: relative;
@@ -115,7 +115,7 @@ export const ProductImage = styled.div`
         height: 100px;
     }
 `;
-export const ProductName = styled.h3`
+const ProductName = styled.h3`
     @media only screen and (max-width: 768px) {
         font-size: 14px;
     }
