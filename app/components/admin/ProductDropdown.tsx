@@ -10,8 +10,11 @@ import { deleteObject, getStorage, ref } from 'firebase/storage';
 import firebaseApp from '@/lib/firebase';
 import { ProductProps } from '@/app/types';
 
+interface ProductDropdownProps {
+  product: ProductProps;
+}
 
-const ProductDropdown: React.FC<ProductProps> = ({ product }) => {
+const ProductDropdown: React.FC<ProductDropdownProps> = ({ product }) => {
   const [menuVisible, setMenuVisible] = useState<boolean>(false)
   const [editVisible, setEditVisible] = useState<boolean>(false)
 

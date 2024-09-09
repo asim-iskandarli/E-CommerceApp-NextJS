@@ -8,7 +8,7 @@ type productContextType = {
     createProduct: (product: ProductProps, User: UserType) => void;
     updateProduct: (product: ProductProps) => void;
     deleteProduct: (productId: String) => void;
-    addPapularProduct: (product: ProductProps, User: UserType) => void;
+    addPapularProduct: (data: [], product: ProductProps) => void;
     deletePopularProduct: (popularProductId: String) => void;
 }
 
