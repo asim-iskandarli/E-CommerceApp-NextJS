@@ -62,6 +62,10 @@ const Container = styled.div`
   margin-bottom: 1rem;
   background-color: #fff;
   padding: 5px;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const Left = styled.div`

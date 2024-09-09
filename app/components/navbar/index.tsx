@@ -37,4 +37,8 @@ const Container = styled.div`
 const Left = styled.div`
     display: flex;
     gap: 2rem;
+
+    @media only screen and (max-width: 768px) {
+        gap: 10px;
+    }
 `;
