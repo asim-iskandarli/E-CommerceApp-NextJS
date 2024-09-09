@@ -17,7 +17,7 @@ Creating, deleting and modifying products <br/><br/><br/>
 
 
 **Install dependencies** <br/> 
-### `cd ./folder-name npm install` <br/>
+### `cd ./folder-name npm install` <br/><br/>
 
 **Start project** <br/> 
 ### `cd ./folder-name npm run dev` or `npm run start`
