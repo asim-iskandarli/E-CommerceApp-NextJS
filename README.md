@@ -12,7 +12,8 @@ Profile editing <br/>
 Search for products <br/>
 Adding and deleting products to cart or favorites <br/>
 Admin panel <br/>
-Creating, deleting and modifying products <br/><br/><br/> 
+Creating, deleting and modifying products <br/>
+Mobile friendly design <br/><br/><br/> 
 
 
 
